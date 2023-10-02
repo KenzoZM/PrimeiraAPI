@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using SistemaDeTarefas.Data;
+using SistemaDeTarefas.Repositorios;
+using SistemaDeTarefas.Repositorios.Interfaces;
 
 namespace SistemaDeTarefas
 {
@@ -10,9 +14,15 @@ namespace SistemaDeTarefas
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<SistemaTarefasDBContext>
+                (options => options.UseSqlServer("Data Source=ZIMABLUE\\SQLSERVER2022;Initial Catalog=DB_SistemaTarefa;Encrypt=False;Integrated Security=True"));
+
+            builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             var app = builder.Build();
 
