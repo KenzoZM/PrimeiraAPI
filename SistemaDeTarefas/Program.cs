@@ -23,6 +23,7 @@ namespace SistemaDeTarefas
                 (options => options.UseSqlServer("Data Source=ZIMABLUE\\SQLSERVER2022;Initial Catalog=DB_SistemaDeTarefa;Encrypt=False;Integrated Security=True"));
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
 
             var app = builder.Build();
 
