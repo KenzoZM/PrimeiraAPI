@@ -5,13 +5,13 @@
 namespace SistemaDeTarefas.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialDB : Migration
+    public partial class CreateInitialDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "TarefaModel",
+                name: "Tarefas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,11 +22,11 @@ namespace SistemaDeTarefas.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TarefaModel", x => x.Id);
+                    table.PrimaryKey("PK_Tarefas", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UsuarioModel",
+                name: "Usuarios",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -36,7 +36,7 @@ namespace SistemaDeTarefas.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsuarioModel", x => x.Id);
+                    table.PrimaryKey("PK_Usuarios", x => x.Id);
                 });
         }
 
@@ -44,10 +44,10 @@ namespace SistemaDeTarefas.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "TarefaModel");
+                name: "Tarefas");
 
             migrationBuilder.DropTable(
-                name: "UsuarioModel");
+                name: "Usuarios");
         }
     }
 }

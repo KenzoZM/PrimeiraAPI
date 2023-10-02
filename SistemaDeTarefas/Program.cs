@@ -20,7 +20,7 @@ namespace SistemaDeTarefas
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<SistemaTarefasDBContext>
-                (options => options.UseSqlServer("Data Source=ZIMABLUE\\SQLSERVER2022;Initial Catalog=DB_SistemaTarefa;Encrypt=False;Integrated Security=True"));
+                (options => options.UseSqlServer("Data Source=ZIMABLUE\\SQLSERVER2022;Initial Catalog=DB_SistemaDeTarefa;Encrypt=False;Integrated Security=True"));
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 

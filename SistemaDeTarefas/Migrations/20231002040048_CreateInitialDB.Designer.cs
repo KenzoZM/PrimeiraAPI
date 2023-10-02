@@ -11,8 +11,8 @@ using SistemaDeTarefas.Data;
 namespace SistemaDeTarefas.Migrations
 {
     [DbContext(typeof(SistemaTarefasDBContext))]
-    [Migration("20231002030903_InitialDB")]
-    partial class InitialDB
+    [Migration("20231002040048_CreateInitialDB")]
+    partial class CreateInitialDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TarefaModel");
+                    b.ToTable("Tarefas");
                 });
 
             modelBuilder.Entity("SistemaDeTarefas.Models.UsuarioModel", b =>
@@ -69,7 +69,7 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UsuarioModel");
+                    b.ToTable("Usuarios");
                 });
 #pragma warning restore 612, 618
         }

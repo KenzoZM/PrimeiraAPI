@@ -43,7 +43,7 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TarefaModel");
+                    b.ToTable("Tarefas");
                 });
 
             modelBuilder.Entity("SistemaDeTarefas.Models.UsuarioModel", b =>
@@ -66,7 +66,7 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UsuarioModel");
+                    b.ToTable("Usuarios");
                 });
 #pragma warning restore 612, 618
         }
